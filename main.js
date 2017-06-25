@@ -3,7 +3,11 @@
  */
 
 var Task = require('./task');
+var User = require('./user');
+var Project = require('./project');
 var taskRepo = require('./taskRepo');
+var userRepo = require('./userRepo');
+var projectRepo = require('./projectRepo');
 
 console.log("Task Applications \n");
 

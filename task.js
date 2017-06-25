@@ -7,6 +7,24 @@ var taskRepo = require('./taskRepo');
 var Task = function(data){
     this.name = data.name;
     this.completed = false;
+    this.user = "";
+    this.project = "";
+};
+
+Task.prototype.linkUser = function(data){
+    this.user = {
+        first: data.first,
+        last: data.last
+    };
+    taskRepo.update(this);
+};
+
+Task.prototype.linkProject = function(data){
+    this.project = {
+        name: data.name,
+        deadline: data.deadline
+    };
+    taskRepo.update(this);
 };
 
 Task.prototype.complete = function () {
